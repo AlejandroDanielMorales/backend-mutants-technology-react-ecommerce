@@ -1,0 +1,124 @@
+/* Contenedor principal de cada sección de productos */
+.product-list-section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* Título de la sección */
+.product-list-section h3 {
+    font-size: 1.5rem;
+    color: var(--color-text);
+    margin: 0 auto;
+    width: 70%;
+    padding: 0.5rem 0;
+}
+
+/* Contenedor de la sección con productos */
+.main-section {
+    background-color: var(--color-terciario);
+    border-radius: var(--border-radius);
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Contenedor de las tarjetas de productos */
+.product-cards-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 10px;
+    width: 100%;
+    padding-block: 20px;
+}
+
+
+.product-cards-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Botones de navegación */
+.scroll-button {
+    background-color: var(--color-hoverlinks-deg);
+    border: none;
+    color: var(--color-principal);
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 60px;
+    svg{
+        color: var(--color-principal);
+    }
+}
+
+.scroll-button:hover {
+    background-color: var(--color-hoverlinks);
+    color: var(--color-principal);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    svg{
+        color: var(--color-principal);
+    }
+    
+}
+
+.scroll-button.left {
+    left: 25px;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.scroll-button.right {
+    right: 25px;
+    transform: translateX(50%) translateY(-50%);
+}
+
+/* Media Queries para responsive */
+@media screen and (max-width: 780px) {
+    .product-list-section h3,
+    .main-section {
+        width: 90%;
+        
+    }
+    
+    .scroll-button {
+        font-size: 1.2rem;
+        width: 30px;
+        height: 30px;
+        background-color: var(--color-hoverlinks);
+        svg{color:var(--color-principal);
+        }
+    }
+    
+    .scroll-button.left {
+        left: 5px;
+    }
+    
+    .scroll-button.right {
+        right: 5px;
+    }
+}
+
+@media screen and (min-width: 781px) and (max-width: 1200px) {
+    .product-list-section ,
+    .main-section {
+        width: 85%;
+        
+    }
+    
+}
